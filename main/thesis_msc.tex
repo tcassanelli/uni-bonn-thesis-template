@@ -1,0 +1,254 @@
+% MASTER OF SCIENCE THESIS TEMPLATE 2018
+% TEMPLATE AUTHOR: TOMAS CASSANELLI
+
+% INITIAL CONFIGURATION
+\documentclass[a4paper, 10pt, twoside]{book}
+
+\usepackage[              % Left and right margins
+    DIV=18,               % You can play with these numbers for a better
+    BCOR=1mm,             % reference look into KOMA-Script CTAN manual
+    headinclude=true,
+    footinclude=false,
+    paper=A4
+    ]{typearea}
+
+% BASIC THESIS INFORMATION
+\def\title{Thesis not too long title}
+\def\thesisauthor{Your name goes here}
+
+% commands below work only for twoside option of \documentclass
+\makeatletter
+\if@twoside
+    \newlength{\textblockoffset}
+    \setlength{\textblockoffset}{10mm}
+    \addtolength{\hoffset}{\textblockoffset}
+    \addtolength{\evensidemargin}{-2.0\textblockoffset}
+\fi
+\makeatother
+
+% PACKAGES
+\usepackage{amsmath,amssymb,mathrsfs}  % Basic math packages
+\usepackage{subfiles}
+\usepackage{natbib}                    % A&A bibliograsphy style
+\bibpunct{(}{)}{;}{a}{}{,}
+
+
+\usepackage{upgreek}                   % More greek letters
+\usepackage{enumerate}
+\usepackage{commath}
+\usepackage{forloop}
+\usepackage{blindtext}
+\usepackage[usenames, dvipsnames]{color}
+
+% to know the page width and adjust the image size!
+% \usepackage{printlen} % \uselengthunit{in}\printlength{\textwidth}
+
+% TABLE PACKAGES
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{tabular}{\small}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% IMAGES PACAKGES
+\usepackage{graphicx}
+\usepackage[font=small]{caption}
+\newtheorem{theorem}{Theorem}
+\graphicspath{{../figures/}}
+
+% TIKZ & PGFPLOTS
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usetikzlibrary{
+    calc,
+    patterns,
+    circuits.logic.US,
+    circuits.ee.IEC,
+    intersections,
+    angles,
+    quotes,
+    arrows,
+    shapes,
+    }
+
+% COLOR BOX
+\usepackage{tcolorbox}
+\newtcolorbox{note}{
+    fontupper=\small,
+    title=Note,
+    arc=0mm,
+    sharp corners,
+    fonttitle=\bfseries\small
+    }
+
+
+% DEDICATION PAGE CONFIGURATION
+\newenvironment{dedication}
+  {\clearpage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \itshape
+   \raggedleft}
+  {\par
+   \vspace{\stretch{3}}
+   \clearpage}
+
+% PDF CONFIGURATION
+\usepackage{hyperref}
+\hypersetup{
+    pdffitwindow=true,
+    pdfstartview={FitH},
+    pdftitle={MSc Thesis},                    % TITLE
+    pdfauthor={Your name goes here},          % AUTHOR
+    pdfsubject={\title},                      % DOCUMENT SUBJECT
+    pdfcreator={Tomas Cassanelli},            % CREATOR
+    pdfproducer={\thesisauthor},              % PRODUCER
+    pdfkeywords={Astronomy, Astrophysics},
+    pdfnewwindow=true,
+    colorlinks=true,                          % COMMENT FOR BLACK LINKS
+    linkcolor=red,
+    citecolor=YellowOrange,
+    urlcolor=RoyalBlue
+}
+
+% DRAFT MODE: uncomment this for draft mode!
+% \usepackage[printwatermark]{xwatermark}
+% \newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+\begin{document}
+
+    \frontmatter  % front and main matter to make roman numbers in between.
+
+    % FIRST PAGE TITLE
+    \pdfbookmark[0]{Title page}{title}
+    \begin{titlepage}
+        \begin{center}
+            \vspace{0.5cm}
+
+            \Huge
+            \textbf{\title}
+
+            \vspace{0.5cm}
+            \LARGE
+            % Thesis Subtitleb
+
+            \vspace{1.5cm}
+
+            \textbf{\thesisauthor}
+
+            \vspace{4cm}
+
+            \begin{center}
+                \includegraphics{logo_aifa}
+            \end{center}
+
+            \vfill
+
+            Masterarbeit in Astrophysik\\
+            angefertigt im Argelander Institut f\"ur Astronomie
+
+            \vspace{0.5cm}
+
+            \Large
+            vorgelegt der \\
+            Mathematisch-Naturwissenschalftlichen Fakult\"at \\
+            der \\
+            Rheinische Friedrich-Wilhelms-Universit\"at Bonn\\
+            Deutschland
+
+            \vspace{0.5cm}
+
+            \LARGE
+            \today
+
+        \end{center}
+    \end{titlepage}
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % DEDICATION
+    \begin{dedication}
+    \pdfbookmark[0]{Dedication}{dedication}
+    To Google and Wikipedia
+    \end{dedication}
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % SIGNATURE PAGE
+    \newpage
+    \thispagestyle{empty}
+    \pdfbookmark[0]{Statement}{statement}
+    \par\vspace*{\fill}
+    \noindent I hereby declare that this thesis was formulated by myself and that no sources or tools than those cited were used.
+    \vspace{0.8cm}
+
+    \begin{center}
+        \begin{tabular}{c@{\hskip 1in}c}
+            \makebox[2in]{\hrulefill} & \makebox[2in]{\hrulefill}\\
+            Date & Signature\\
+        \end{tabular}
+    \end{center}
+    \vspace{1cm}
+
+    \noindent 1. Gutachter: Prof. Dr. (Professor Name 1) \\
+    \noindent 2. Gutachter: Prof. Dr. (Professor Name 2)
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % ABSTRACT
+    \subfile{../abstract/abstract}
+
+    % ACKNOWLEDGMENTS
+    \subfile{../acknowledgments/acknowledgments}
+
+    % TABLE OF CONTENT
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Contents}
+    \tableofcontents
+
+    % LIST OF FIGURES
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
+
+    % LIST OF TABLES
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    \mainmatter  % front and main matter to make roman numbers in between
+
+    % BODY
+    \subfile{../chapter1/chapter1}
+    %\subfile{../chapter2/chapter2}
+    %\subfile{../chapter3/chapter3}
+    %\subfile{../chapter4/chapter4}
+    %\subfile{../chapter5/chapter5}
+
+    % APPENDICES
+    \appendix
+    \subfile{../appendix1/appendix1}
+    %\subfile{../appendix2/appendix2}
+    %\subfile{../appendix3/appendix3}
+
+    % REFERENCES
+    \bibliographystyle{../references/bibstyle_aa.bst}
+    \bibliography{../references/bibfile_thesis.bib}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass[../main/thesis_msc.tex]{subfiles}
+
+\begin{document}
+
+    \chapter{Introduction}
+
+    \section{Citations}
+    To make citations visit the A\&A journal citation rules go to
+
+    \url{https://www.aanda.org/component/content?view=article&id=160}
+
+    There are several inline citations, these are:
+    \begin{itemize}
+        \item \citep{bracewell1978fourier}
+        \item \citet{bracewell1978fourier}
+        \item \citep[see][]{bracewell1978fourier}
+    \end{itemize}
+
+
+    \section{Notes}
+    You can also make nice notes inside your document! Just use the \texttt{note} environment.
+
+    \begin{note}
+        \blindtext % DUMMY TEXT
+    \end{note}
+
+    \noindent Check out the \texttt{tcolorbox} package for more customizations!
+
+    \section{Tables}
+
+    To make a table simply introduce,
+
+    \begin{table}[t]
+        \centering
+        \begin{tabular}{ccc}
+            \toprule
+            \textbf{A} & \textbf{B} & \textbf{C} \\ \midrule
+            1 & 2 & 3 \\
+            1 & 2 & 3 \\
+            1 & 2 & 3 \\
+            1 & 2 & 3 \\
+            1 & 2 & 3 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Adding a caption}
+        \label{tab:my_table}
+    \end{table}
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+
+            \def\linethick{0.6pt}
+
+            \coordinate (M1) at (-2, 0);
+            \coordinate (m) at (2, 4);
+            \coordinate (M2) at (4, 0);
+
+            \draw[->] (-3, 0) -- (5, 0) node[left, below] {$x$};
+            \draw[->] (0, -1) -- (0, 5) node[right] {$y$};
+
+            \draw[line width=\linethick] (0, 0) -- node[midway,left] {$r$} (m) node[above] {$m$};
+            \draw[line width=\linethick] (M1) node[above, xshift=-10] {$M_1$} -- node[midway,left] {$s_1$} (m);
+            \draw[line width=\linethick] (M2) node[above, xshift=7] {$M_2$} -- node[midway,left] {$s_2$} (m);
+
+            \path (M1) -- node[midway, below] {$r_1$} (0, 0);
+            \path (0, 0) -- node[midway, below] {$r_2$} (M2);
+
+            % Dashed lines
+            \draw[dashed] (M1) -- ++ (0, -1);
+            \draw[dashed] (M2) -- ++ (0, -1);
+
+            \draw[|<->|] ($(M1) + (0, -1.1)$) -- node[midway,fill=white] {$a$} ($(M2) + (0, -1.1)$);
+
+            \node[below] at (0.4, 0) {CM};
+
+            \draw ([shift={(0, 0)}]64:0.5) arc[radius=0.5, start angle=64, end angle=0] node[above, xshift=4] {$\theta$};
+
+            % balck circles
+            \filldraw[black] (m) circle(0.1);
+            \filldraw[black] (M1) circle(0.17);
+            \filldraw[black] (M2) circle(0.13);
+            \filldraw[black] (0, 0) circle(0.05);
+
+        \end{tikzpicture}
+        \caption{Nice diagram}
+        \label{fig:my_fig}
+    \end{figure}
+
+
+\end{document}
