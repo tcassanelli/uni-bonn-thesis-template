@@ -36,6 +36,14 @@ I don't want to make a (LaTeX) package out of this template, I only want to poin
 - [x] Python scaling figures
 - [ ] Minipage and placing the caption on the side
 
+## LaTeX useful links:
+
+* By far the best LaTeX forum [TeX](https://tex.stackexchange.com).
+* When you know the symbol but you don't know how is it called, then draw it with [Detexify](http://detexify.kirelabs.org/).
+* Tikz examples, [TeXample](http://www.texample.net/).
+* LaTeX [colors](http://latexcolor.com).
+* [MacTex](http://pages.uoregon.edu/koch/texshop/).
+
 ## Bugs, issues & feature requests
 
 Tell me what you think and how to improve the template :smiley: !
