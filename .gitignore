@@ -14,15 +14,3 @@ main/*.out
 main/*.gz
 main/*.toc
 
-chapter1/*.aux
-chapter1/*.bbl
-chapter1/*.blg
-chapter1/*.fdb_latexmk
-chapter1/*.fls
-chapter1/*.lof
-chapter1/*.log
-chapter1/*.lot
-chapter1/*.out
-chapter1/*.gz
-chapter1/*.toc
-

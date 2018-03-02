@@ -32,7 +32,8 @@ I don't want to make a (LaTeX) package out of this template, I only want to poin
 - [x] Table example
 - [ ] Big table example
 - [x] Tikz example
-- [ ] Image example
+- [x] Image example
+- [x] Python scaling figures
 - [ ] Minipage and placing the caption on the side
 
 ## Bugs, issues & feature requests
