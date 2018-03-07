@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import golden
 
-# to have the same configuration in font as in your min.tex file, I used a
+# to have the same configuration font as in your thesis_msc.tex file, I used a
 # plotting style for matplitlib, simply add the line
 
 plt.style.use('master_thesis_sty.mplstyle')
