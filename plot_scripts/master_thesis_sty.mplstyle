@@ -15,10 +15,10 @@ mathtext.fontset    : stix
 # FONT
 font.family         : serif
 font.serif          : Computer Modern Roman
-font.size           : 9
+font.size           : 10
 
 # AXES
-axes.labelsize      : 8
+axes.labelsize      : 9
 axes.linewidth      : 0.5
 axes.titlesize      : 9
 axes.grid           : True

@@ -27,6 +27,5 @@ for ax in axes:
     ax.set_xlabel('$x$ [m]')
     ax.set_ylabel('$y$ [m]')
 
-fig.subplots_adjust(left=.08, bottom=.18, right=.99, top=.96)
+fig.subplots_adjust(left=.08, bottom=.18, right=.99, top=.96, wspace=.3)
 fig.savefig('../figures/figure_example.pdf')
-
