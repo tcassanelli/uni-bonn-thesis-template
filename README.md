@@ -56,4 +56,4 @@ This template is licensed under a 3-clause BSD style license - see the LICENSE.m
 
 If you have any questions about the code, do not hesitate and raise an issue. You can also send me an email directly:
 
-* tcassanelli  *__at__*  protonmail.com
+* tcassanelli _at_ protonmail.com
